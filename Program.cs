@@ -9,7 +9,6 @@ namespace Tema1
     {
         static void Main(string[] args)
         {
-            Animal a = new Animal("asd", "dfs");
             List<Animal> ListaAnimale = new List<Animal>();
             int n;
             try
