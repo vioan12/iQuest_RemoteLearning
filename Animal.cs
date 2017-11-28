@@ -2,23 +2,18 @@ using System;
 
 namespace Tema1
 {
-    class Animal
+    abstract class Animal
     {
         private String nume;
-        private String sunet;
-
         public String Get_nume
         {
             get { return nume; }
         }
-        public String Get_sunet
-        {
-            get { return sunet; }
-        }
-        public Animal(String valueofnume, String valueofsunet)
+        public abstract String Get_sunet { get; }
+        public abstract String Get_tip { get; }
+        public Animal(String valueofnume)
         {
             nume = valueofnume;
-            sunet = valueofsunet;
         }
     }
 }
