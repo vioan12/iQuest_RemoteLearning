@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 
 namespace Tema1
 {
-    class Caine : Animal
+    class Broasca : Animal
     {
         private String sunet;
 
@@ -14,9 +14,9 @@ namespace Tema1
         {
             get { return this.GetType().Name; }
         }
-        public Caine(string valueofnume) : base(valueofnume)
+        public Broasca(string valueofnume) : base(valueofnume)
         {
-            sunet = "ham";
+            sunet = "oac";
         }
     }
 }
