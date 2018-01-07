@@ -42,9 +42,10 @@ namespace VendingMachine
             else
                 return null;
         }
-        public Dictionary<string, Product>.ValueCollection GetAllItem()
+        public List<Product> GetAllItem()
         {
-            return products_list.Values;
+            List<Product> list = new List<Product>(products_list.Values);
+            return list;
         }
     }
 }

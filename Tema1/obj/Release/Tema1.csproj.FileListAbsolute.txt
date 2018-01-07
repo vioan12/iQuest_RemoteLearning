@@ -1,0 +1,5 @@
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Release\Tema1.exe.config
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Release\Tema1.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Release\Tema1.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Release\Tema1.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Release\Tema1.pdb
