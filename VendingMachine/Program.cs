@@ -98,6 +98,39 @@ namespace VendingMachine
                             file2.WriteLine("");
                             break;
                         }
+                    case 4:
+                        {
+                            P_temp = new Product();
+                            CI_temp = new ContainableItem();
+                            s_temp = file.ReadLine();
+                            P_temp.name = s_temp;
+
+                            s_temp = file.ReadLine();
+                            P_temp.category = new ProductCategory();
+                            P_temp.category.name = s_temp;
+
+                            s_temp = file.ReadLine();
+                            P_temp.price = Convert.ToDouble(s_temp);
+
+                            s_temp = file.ReadLine();
+                            P_temp.quantity = Convert.ToInt32(s_temp);
+
+                            s_temp = file.ReadLine();
+                            P_temp.size = Convert.ToInt32(s_temp);
+
+                            s_temp = file.ReadLine();
+                            i_temp1 = Convert.ToInt32(s_temp);
+
+                            s_temp = file.ReadLine();
+                            i_temp2 = Convert.ToInt32(s_temp);
+
+                            CI_temp.product = P_temp;
+                            CI_temp.position.column = i_temp1;
+                            CI_temp.position.row = i_temp2;
+
+                            Dispenser.update(ref CI, CI_temp);
+                            break;
+                        }
                 }
             }
             file.Close();

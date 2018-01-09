@@ -2,7 +2,7 @@
 Baton Ciocolata
 Baton
 3,5
-3
+1
 2
 3
 1
@@ -32,13 +32,12 @@ Bauturi
 4
 3
 2
-Cipsuri
+Covrigei
 Snacks
+0,6
+6
+3
 2
-10
-2
-1
-1
 3
 2
 Cfdafaipsuri
@@ -47,5 +46,24 @@ Snafffcks
 10
 2
 1
+1
+3
+4
+Cipsuri
+Snacks
+2
+10
+2
+1
+1
+3
+3
+4
+Baton Ciocolata
+Baton
+3,5
+1
+2
+3
 1
 3
