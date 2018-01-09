@@ -43,9 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainableItem.cs" />
+    <Compile Include="ContainableItemsCollection.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductCategory.cs" />
-    <Compile Include="ProductCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
