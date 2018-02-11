@@ -1,0 +1,6 @@
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Release\VendingMachine.exe.config
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Release\VendingMachine.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Release\VendingMachine.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Release\VendingMachine.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Release\VendingMachine.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Release\In.txt

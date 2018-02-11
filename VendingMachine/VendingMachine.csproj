@@ -43,14 +43,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainableItem.cs" />
+    <Compile Include="ContainableItemsCollection.cs" />
+    <Compile Include="Dispenser.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductCategory.cs" />
-    <Compile Include="ProductCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="In.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

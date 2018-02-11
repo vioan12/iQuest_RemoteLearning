@@ -1,0 +1,7 @@
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Debug\VendingMachine.exe.config
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Debug\VendingMachine.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Debug\VendingMachine.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Debug\VendingMachine.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Debug\VendingMachine.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Debug\In.txt
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache

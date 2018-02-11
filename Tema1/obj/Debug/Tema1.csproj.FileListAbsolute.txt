@@ -1,0 +1,11 @@
+c:\users\ioan\documents\visual studio 2015\Projects\Tema1\Tema1\bin\Debug\Tema1.exe.config
+c:\users\ioan\documents\visual studio 2015\Projects\Tema1\Tema1\bin\Debug\Tema1.exe
+c:\users\ioan\documents\visual studio 2015\Projects\Tema1\Tema1\bin\Debug\Tema1.pdb
+c:\users\ioan\documents\visual studio 2015\Projects\Tema1\Tema1\obj\Debug\Tema1.exe
+c:\users\ioan\documents\visual studio 2015\Projects\Tema1\Tema1\obj\Debug\Tema1.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Debug\Tema1.exe.config
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Debug\Tema1.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Debug\Tema1.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Debug\Tema1.exe
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Debug\Tema1.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Debug\Tema1.csprojResolveAssemblyReference.cache
