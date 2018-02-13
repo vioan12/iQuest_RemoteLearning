@@ -3,3 +3,8 @@ C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Release\Tema1.pdb
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Release\Tema1.exe
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Release\Tema1.pdb
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\bin\Release\Tema1.exe.config
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\obj\Release\Tema1.exe
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\obj\Release\Tema1.pdb
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\bin\Release\Tema1.exe
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\bin\Release\Tema1.pdb

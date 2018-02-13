@@ -8,11 +8,11 @@ namespace VendingMachine
 {
     class Dispenser
     {
-        public static void update(ref ContainableItemsCollection CIC, ContainableItem CI)
+        public static void update(ref ContainableItemsCollection CIC, int row, int column)
         {
             for(int i=0; i<CIC.Count(); i++)
             {
-                if (CIC.GetItem(i).product.name == CI.product.name && CIC.GetItem(i).product.category.name == CI.product.category.name && CIC.GetItem(i).product.price == CI.product.price && CIC.GetItem(i).product.quantity == CI.product.quantity && CIC.GetItem(i).product.size == CI.product.size)
+                if (CIC.GetItem(i).position.CompareWith(new Position(row, column)) == 0)
                 {
                     if (CIC.GetItem(i).product.quantity > 1)
                     {
@@ -22,7 +22,7 @@ namespace VendingMachine
                     {
                         if (CIC.GetItem(i).product.quantity == 1)
                         {
-                            CIC.Remove(CIC.GetItem(i));
+                            CIC.Remove(row,column);
                         }
                     }
                 }

@@ -8,13 +8,33 @@ Cipsuri | Snacks | 2 | 10 | 2
 Suc | Bauturi | 5,2 | 3 | 3
 
 Baton Ciocolata | Baton | 3,5 | 1 | 2
-Cipsuri | Snacks | 2 | 9 | 2
+Cipsuri | Snacks | 2 | 10 | 2
 Suc | Bauturi | 5,2 | 3 | 3
+Covrigei | Snacks | 0,6 | 6 | 3
 
 Baton Ciocolata | Baton | 3,5 | 1 | 2
 Cipsuri | Snacks | 2 | 9 | 2
 Suc | Bauturi | 5,2 | 3 | 3
+Covrigei | Snacks | 0,6 | 6 | 3
 
-Cipsuri | Snacks | 2 | 9 | 2
+Baton Ciocolata | Baton | 3,5 | 1 | 2
+Cipsuri | Snacks | 2 | 8 | 2
 Suc | Bauturi | 5,2 | 3 | 3
+Covrigei | Snacks | 0,6 | 6 | 3
+
+Cipsuri | Snacks | 2 | 8 | 2
+Suc | Bauturi | 5,2 | 3 | 3
+Covrigei | Snacks | 0,6 | 6 | 3
+
+Cipsuri | Snacks | 2 | 7 | 2
+Suc | Bauturi | 5,2 | 3 | 3
+Covrigei | Snacks | 0,6 | 6 | 3
+
+Cipsuri | Snacks | 2 | 7 | 2
+Suc | Bauturi | 5,2 | 3 | 3
+Covrigei | Snacks | 0,6 | 6 | 3
+
+Cipsuri | Snacks | 2 | 7 | 2
+Suc | Bauturi | 5,2 | 3 | 3
+Covrigei | Snacks | 0,6 | 6 | 3
 

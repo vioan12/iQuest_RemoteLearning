@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class ContainableItem
+    abstract class PaymentMethod
     {
-        public Product product { set; get; }
-        public Position position { set; get; }
+
     }
 }
