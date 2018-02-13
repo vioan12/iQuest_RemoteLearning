@@ -8,7 +8,8 @@ namespace VendingMachine
 {
     class Dispenser
     {
-        public static void update(ref ContainableItemsCollection CIC, int row, int column)
+        public ContainableItemsCollection CIC { set; get; }
+        public void Update(int row, int column)
         {
             for(int i=0; i<CIC.Count(); i++)
             {

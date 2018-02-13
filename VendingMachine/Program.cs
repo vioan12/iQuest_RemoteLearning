@@ -12,7 +12,7 @@ namespace VendingMachine
         {
             int i_temp1, i_temp2;
             string s_temp, op;
-            ContainableItemsCollection CIC = new ContainableItemsCollection();
+            Dispenser D = new Dispenser();
             System.IO.StreamReader file = new System.IO.StreamReader("In.txt");
             System.IO.StreamWriter file2 = new System.IO.StreamWriter("Out.txt");
 
@@ -53,7 +53,7 @@ namespace VendingMachine
                             CI_temp.product = P_temp;
                             CI_temp.position = new Position(i_temp1, i_temp2);
 
-                            CIC.Add(CI_temp);
+                            D.CIC.Add(CI_temp);
                             break;
                         }
                     case "rmv":
@@ -64,14 +64,14 @@ namespace VendingMachine
                             s_temp = file.ReadLine();
                             i_temp2 = Convert.ToInt32(s_temp);
 
-                            CIC.Remove(i_temp1, i_temp2);
+                            D.CIC.Remove(i_temp1, i_temp2);
                             break;
                         }
                     case "wrt":
                         {
-                            for(int i=0; i<CIC.Count(); i++)
+                            for(int i=0; i<D.CIC.Count(); i++)
                             {
-                                file2.WriteLine(CIC.GetItem(i).product.name + " | " + CIC.GetItem(i).product.category.name + " | " + Convert.ToString(CIC.GetItem(i).product.price) + " | " + CIC.GetItem(i).product.quantity + " | " + CIC.GetItem(i).product.size);
+                                file2.WriteLine(D.CIC.GetItem(i).product.name + " | " + D.CIC.GetItem(i).product.category.name + " | " + Convert.ToString(D.CIC.GetItem(i).product.price) + " | " + D.CIC.GetItem(i).product.quantity + " | " + D.CIC.GetItem(i).product.size);
                             }
                             file2.WriteLine("");
                             break;
@@ -84,7 +84,7 @@ namespace VendingMachine
                             s_temp = file.ReadLine();
                             i_temp2 = Convert.ToInt32(s_temp);
 
-                            Dispenser.update(ref CIC, i_temp1, i_temp2);
+                            D.Update(i_temp1, i_temp2);
                             break;
                         }
                 }

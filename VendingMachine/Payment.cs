@@ -8,20 +8,48 @@ namespace VendingMachine
 {
     class Payment
     {
-        private int methodselected{ get; set;}
-        private float amount { get; set; }
-        public Payment()
+        private PaymentMethod paymentmethod;
+        private ContainableItem containableitem;
+        private Dispenser dispenser;
+        public Payment(ref Dispenser dispenser)
         {
-            methodselected = 0;
-            amount = 0;
+            this.dispenser = dispenser;
+        }
+        public void SelectProduct(ContainableItem containableitem)
+        {
+            this.containableitem = containableitem;
         }
         public void PaymentMethod(int method)
         {
-            if((method == 1) || (method == 2) || (method == 3))
+            if(method == 1)
             {
-                methodselected = method;
+                paymentmethod = new Coins();
+            }
+            if(method == 2)
+            {
+                paymentmethod = new Banknote();
+            }
+            if(method == 3)
+            {
+                paymentmethod = new CreditCard();
             }
         }
-        public bool Pay(int )
+        public void Pay(int value = 0)
+        {
+            if(paymentmethod != null)
+            {
+                paymentmethod.intro(value);
+                if (paymentmethod.amount >= containableitem.product.price)
+                {
+                    Update();
+
+                }
+            }
+        }
+        private void Update()
+        {
+            dispenser.Update(containableitem.position.row, containableitem.position.column);
+            paymentmethod.amount = (float)containableitem.product.price;
+        }
     }
 }

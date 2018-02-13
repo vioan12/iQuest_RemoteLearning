@@ -49,5 +49,14 @@ namespace VendingMachine
                 return null;
             }
         }
+        public ContainableItem GetItem(int row, int column)
+        {
+            for (int i = 0; i < products_list.Count; i++)
+                if (products_list.ElementAt(i).position.CompareWith(new Position(row, column)) == 0)
+                {
+                    return products_list.ElementAt(i);
+                }
+            return null;
+        }
     }
 }

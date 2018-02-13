@@ -8,6 +8,8 @@ namespace VendingMachine
 {
     abstract class PaymentMethod
     {
-
+        public float amount{ get; protected set;}
+        public abstract void Pay(int value);
+        public abstract void Change(int value);
     }
 }
