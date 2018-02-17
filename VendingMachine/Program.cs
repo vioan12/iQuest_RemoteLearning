@@ -8,14 +8,13 @@ namespace VendingMachine
 {
     class Program
     {
-        static void Main(string[] args)
+        static private Dispenser dispenser;
+        static private void ReadFile()
         {
             int i_temp1, i_temp2;
             string s_temp, op;
-            Dispenser D = new Dispenser();
+            dispenser = new Dispenser();
             System.IO.StreamReader file = new System.IO.StreamReader("In.txt");
-            System.IO.StreamWriter file2 = new System.IO.StreamWriter("Out.txt");
-
             Product P_temp;
             ContainableItem CI_temp;
             while ((s_temp = file.ReadLine()) != null)
@@ -53,44 +52,41 @@ namespace VendingMachine
                             CI_temp.product = P_temp;
                             CI_temp.position = new Position(i_temp1, i_temp2);
 
-                            D.CIC.Add(CI_temp);
-                            break;
-                        }
-                    case "rmv":
-                        {
-                            s_temp = file.ReadLine();
-                            i_temp1 = Convert.ToInt32(s_temp);
-
-                            s_temp = file.ReadLine();
-                            i_temp2 = Convert.ToInt32(s_temp);
-
-                            D.CIC.Remove(i_temp1, i_temp2);
-                            break;
-                        }
-                    case "wrt":
-                        {
-                            for(int i=0; i<D.CIC.Count(); i++)
-                            {
-                                file2.WriteLine(D.CIC.GetItem(i).product.name + " | " + D.CIC.GetItem(i).product.category.name + " | " + Convert.ToString(D.CIC.GetItem(i).product.price) + " | " + D.CIC.GetItem(i).product.quantity + " | " + D.CIC.GetItem(i).product.size);
-                            }
-                            file2.WriteLine("");
-                            break;
-                        }
-                    case "upd":
-                        {
-                            s_temp = file.ReadLine();
-                            i_temp1 = Convert.ToInt32(s_temp);
-
-                            s_temp = file.ReadLine();
-                            i_temp2 = Convert.ToInt32(s_temp);
-
-                            D.Update(i_temp1, i_temp2);
+                            dispenser.Add(CI_temp);
                             break;
                         }
                 }
             }
             file.Close();
-            file2.Close();
+        }
+        static void Main(string[] args)
+        {
+            int i_temp1, i_temp2;
+            string s_temp, op;
+            ReadFile();
+            switch (op)
+            {
+                case "wrt":
+                    {
+                        for (int i = 0; i < dispenser.collection.Count(); i++)
+                        {
+                            file2.WriteLine(D.CIC.GetItem(i).product.name + " | " + D.CIC.GetItem(i).product.category.name + " | " + Convert.ToString(D.CIC.GetItem(i).product.price) + " | " + D.CIC.GetItem(i).product.quantity + " | " + D.CIC.GetItem(i).product.size);
+                        }
+                        file2.WriteLine("");
+                        break;
+                    }
+                case "upd":
+                    {
+                        s_temp = file.ReadLine();
+                        i_temp1 = Convert.ToInt32(s_temp);
+
+                        s_temp = file.ReadLine();
+                        i_temp2 = Convert.ToInt32(s_temp);
+
+                        dispenser.DecrementQuantity(i_temp1, i_temp2);
+                        break;
+                    }
+            }
         }
     }
 }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class Banknote : PaymentCash
+    abstract class PaymentCash : Payment
     {
-        public Banknote(double value) : base(value)
+        public PaymentCash(double value)
         {
+            this.value = value;
         }
     }
 }
