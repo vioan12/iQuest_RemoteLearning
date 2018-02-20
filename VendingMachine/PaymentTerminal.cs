@@ -25,7 +25,7 @@ namespace VendingMachine
                 return true;
             return false;
         }
-        public void SelectProduct(int price)
+        public void SelectProduct(double price)
         {
             this.price = price;
         }
@@ -49,13 +49,28 @@ namespace VendingMachine
         }
         public double GiveChange()
         {
-            if (IsComplete() == true)
+            if ((IsComplete() == true) && (IsDefault() == false))
             {
-                return (amount - price);
+                double d_temp = amount - price;
+                Default();
+                return d_temp;
             }
             else
             {
                 return 0;
+            }
+        }
+        public double Cancel()
+        {
+            if(IsDefault() == true)
+            {
+                return 0;
+            }
+            else
+            {
+                double d_temp = amount;
+                Default();
+                return d_temp;
             }
         }
     }
