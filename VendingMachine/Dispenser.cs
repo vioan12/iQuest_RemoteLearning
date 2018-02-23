@@ -8,25 +8,31 @@ namespace VendingMachine
 {
     class Dispenser
     {
-        public static void update(ref ContainableItemsCollection CIC, ContainableItem CI)
+        public ContainableItemsCollection collection { private set; get; }
+        public Dispenser()
         {
-            for(int i=0; i<CIC.Count(); i++)
+            collection = new ContainableItemsCollection();
+        }
+        public void DecrementQuantity(int row, int column)
+        {
+            for(int i = 0; i < collection.Count(); i++)
             {
-                if (CIC.GetItem(i).product.name == CI.product.name && CIC.GetItem(i).product.category.name == CI.product.category.name && CIC.GetItem(i).product.price == CI.product.price && CIC.GetItem(i).product.quantity == CI.product.quantity && CIC.GetItem(i).product.size == CI.product.size)
+                if (collection.GetItem(i).position.CompareWith(new Position(row, column)) == 0)
                 {
-                    if (CIC.GetItem(i).product.quantity > 1)
+                    if (collection.GetItem(i).product.quantity > 1)
                     {
-                        CIC.GetItem(i).product.quantity -= 1;
+                        collection.GetItem(i).product.quantity -= 1;
                     }
                     else
                     {
-                        if (CIC.GetItem(i).product.quantity == 1)
-                        {
-                            CIC.Remove(CIC.GetItem(i));
-                        }
+                        collection.Remove(row, column);
                     }
                 }
             }
+        }
+        public void Add(ContainableItem containableitem)
+        {
+            collection.Add(containableitem);
         }
     }
 }

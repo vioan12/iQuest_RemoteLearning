@@ -8,4 +8,10 @@ C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Debug\Tema1.pdb
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Debug\Tema1.exe
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\bin\Debug\Tema1.pdb
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\bin\Debug\Tema1.exe.config
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\obj\Debug\Tema1.exe
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\Tema1\obj\Debug\Tema1.pdb
+C:\Users\iONUT\Documents\iquest_c-remotelearning\Tema1\bin\Debug\Tema1.exe.config
+C:\Users\iONUT\Documents\iquest_c-remotelearning\Tema1\obj\Debug\Tema1.exe
+C:\Users\iONUT\Documents\iquest_c-remotelearning\Tema1\obj\Debug\Tema1.pdb
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Tema1\obj\Debug\Tema1.csprojResolveAssemblyReference.cache

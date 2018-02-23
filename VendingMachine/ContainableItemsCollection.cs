@@ -15,12 +15,21 @@ namespace VendingMachine
         }
         public void Add(ContainableItem CI)
         {
-            products_list.Add(CI);
+            bool sw = true;
+            for (int i = 0; (i < products_list.Count) && (sw == true); i++)
+                if (products_list.ElementAt(i).position.CompareWith(new Position(CI.position.row, CI.position.column)) == 0)
+                {
+                    sw = false;
+                }
+            if (sw == true)
+            {
+                products_list.Add(CI);
+            }
         }
-        public void Remove(ContainableItem CI)
+        public void Remove(int row, int column)
         {
             for (int i = 0; i < products_list.Count; i++)
-                if (products_list.ElementAt(i).product.name == CI.product.name && products_list.ElementAt(i).product.category.name == CI.product.category.name && products_list.ElementAt(i).product.price == CI.product.price && products_list.ElementAt(i).product.quantity == CI.product.quantity && products_list.ElementAt(i).product.size == CI.product.size)
+                if (products_list.ElementAt(i).position.CompareWith(new Position(row,column)) == 0) 
                 {
                     products_list.Remove(products_list.ElementAt(i));
                 }
@@ -39,6 +48,15 @@ namespace VendingMachine
             {
                 return null;
             }
+        }
+        public ContainableItem GetItem(int row, int column)
+        {
+            for (int i = 0; i < products_list.Count; i++)
+                if (products_list.ElementAt(i).position.CompareWith(new Position(row, column)) == 0)
+                {
+                    return products_list.ElementAt(i);
+                }
+            return null;
         }
     }
 }

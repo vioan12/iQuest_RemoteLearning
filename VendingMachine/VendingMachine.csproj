@@ -42,9 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banknote.cs" />
+    <Compile Include="Coins.cs" />
     <Compile Include="ContainableItem.cs" />
     <Compile Include="ContainableItemsCollection.cs" />
+    <Compile Include="CreditCard.cs" />
     <Compile Include="Dispenser.cs" />
+    <Compile Include="PaymentCash.cs" />
+    <Compile Include="PaymentStock.cs" />
+    <Compile Include="PaymentTerminal.cs" />
+    <Compile Include="Payment.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductCategory.cs" />

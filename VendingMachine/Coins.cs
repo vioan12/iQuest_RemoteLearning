@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class ContainableItem
+    class Coins : PaymentCash
     {
-        public Product product { set; get; }
-        public Position position { set; get; }
+        public Coins(double value) : base(value)
+        {
+        }
     }
 }

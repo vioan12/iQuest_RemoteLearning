@@ -4,3 +4,10 @@ C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\Vendin
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Release\VendingMachine.exe
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Release\VendingMachine.pdb
 C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\bin\Release\In.txt
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\VendingMachine\bin\Release\In.txt
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\VendingMachine\bin\Release\VendingMachine.exe.config
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\VendingMachine\bin\Release\VendingMachine.exe
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\VendingMachine\bin\Release\VendingMachine.pdb
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\VendingMachine\obj\Release\VendingMachine.exe
+C:\Users\iONUT\Desktop\vioan12-iquest_c-remotelearning-56cad43d9133\VendingMachine\obj\Release\VendingMachine.pdb
+C:\Users\Ioan\Documents\Visual Studio 2015\Projects\iQuest_RemoteLearning\VendingMachine\obj\Release\VendingMachine.csprojResolveAssemblyReference.cache
