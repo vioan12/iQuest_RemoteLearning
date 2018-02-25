@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class Coins : PaymentCash
+    static class Constants
     {
-        public Coins(double value) : base(value)
-        {
-        }
+        public const double Profit = 10.0;
     }
 }
