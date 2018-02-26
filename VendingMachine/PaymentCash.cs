@@ -12,5 +12,9 @@ namespace VendingMachine
         {
             this.value = value;
         }
+        public override double Pay(double price)
+        {
+            return base.value;
+        }
     }
 }

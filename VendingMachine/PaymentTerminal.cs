@@ -21,7 +21,14 @@ namespace VendingMachine
         }
         public void AddAmount(Payment payment)
         {
-            amount = amount + payment.value;
+            try
+            {
+                amount = amount + payment.Pay(price);
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
         }
         public bool IsComplete()
         {

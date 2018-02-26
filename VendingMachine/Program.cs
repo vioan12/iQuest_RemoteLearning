@@ -74,10 +74,11 @@ namespace VendingMachine
             Console.WriteLine("");
             Console.WriteLine("1)Write all porducts");
             Console.WriteLine("2)Buy a product");
-            Console.WriteLine("3)Exit");
+            Console.WriteLine("3)Statistic of all porducts");
+            Console.WriteLine("4)Exit");
             Console.WriteLine("Enter your option:");
             string selectedoption = Console.ReadLine();
-            while ((selectedoption != "1") && (selectedoption != "2") && (selectedoption != "3"))
+            while ((selectedoption != "1") && (selectedoption != "2") && (selectedoption != "3") && (selectedoption != "4"))
             {
                 Console.WriteLine("Reenter your option:");
                 selectedoption = Console.ReadLine();
@@ -89,6 +90,18 @@ namespace VendingMachine
             for (int i = 0; i < dispenser.collection.Count(); i++)
             {
                 Console.WriteLine("[" + dispenser.collection.GetItem(i).position.row + " " + dispenser.collection.GetItem(i).position.column + "] ---> " + dispenser.collection.GetItem(i).product.name + " | " + dispenser.collection.GetItem(i).product.category.name + " | " + Convert.ToString(dispenser.collection.GetItem(i).product.price) + " | " + dispenser.collection.GetItem(i).product.quantity + " | " + dispenser.collection.GetItem(i).product.size);
+            }
+            Console.WriteLine("");
+        }
+        static private void ConsoleWriteAllStatisticForProducts()
+        {
+            for (int i = 0; i < statisticitemscollection.Count(); i++)
+            {
+                Console.WriteLine("");
+                Console.WriteLine(statisticitemscollection.GetItem(i).product.name + " | " + statisticitemscollection.GetItem(i).product.category.name + " | " + Convert.ToString(statisticitemscollection.GetItem(i).product.price));
+                Console.WriteLine("Number of sold products:" + statisticitemscollection.GetItem(i).numberofsoldproduct);
+                Console.WriteLine("Earnings:" + ( (statisticitemscollection.GetItem(i).profitpercentage / 100 * statisticitemscollection.GetItem(i).product.price) * statisticitemscollection.GetItem(i).numberofsoldproduct) + " $");
+
             }
             Console.WriteLine("");
         }
@@ -148,14 +161,30 @@ namespace VendingMachine
             int nr = 0;
             Console.WriteLine("Enter your CVV:");
             string x = Console.ReadLine();
-            creditcard.Validation(x);
-            while ((creditcard.valid == false) && (nr < 3))
+            try
             {
-                Console.WriteLine("Wrong CVV!");
+                creditcard.Validation(x);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            while ((creditcard.valid == false) && (nr < 2))
+            {
                 Console.WriteLine("Reenter your CVV:");
                 x = Console.ReadLine();
-                creditcard.Validation(x);
-                nr++;
+                try
+                {
+                    creditcard.Validation(x);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+                finally
+                {
+                    nr++;
+                }
             }
             if (creditcard.valid == false)
             {
@@ -280,14 +309,18 @@ namespace VendingMachine
                                             }
                                             if(ConsoleCreditCardValidation(creditcard) == true)
                                             {
-                                                paymentterminal.AddAmount(creditcard);
-                                                Console.WriteLine("The payment is completed!");
-                                                Console.WriteLine("Change:" + paymentterminal.GiveChange() + " $");
+                                                try
+                                                {
+                                                    paymentterminal.AddAmount(creditcard);
+                                                }
+                                                catch(Exception exception)
+                                                {
+                                                    Console.WriteLine(exception.Message);
+                                                }
                                             }
                                             else
                                             {
-                                                Console.WriteLine("The payment is canceled!");
-                                                Console.WriteLine("Change:" + paymentterminal.Cancel() + " $");
+                                                Console.WriteLine("The Credit Card is not valid!");
                                             }
                                             break;
                                         }
@@ -303,6 +336,8 @@ namespace VendingMachine
                             {
                                 Console.WriteLine("The payment is completed!");
                                 Console.WriteLine("Change:" + paymentterminal.GiveChange() + " $");
+                                statisticitemscollection.IncrementNumberOfSoldProduct(dispenser.collection.GetItem(position.row, position.column).product);
+                                dispenser.DecrementQuantity(position.row, position.column);
                             }
                             else
                             {
@@ -311,8 +346,15 @@ namespace VendingMachine
                             }
                             break;
                         }
+                    case 3:
+                        {
+                            //Statistic of all porducts
+                            ConsoleWriteAllStatisticForProducts();
+                            break;
+                        }
+
                 }
-            } while (op != 3);
+            } while (op != 4);
         }
     }
 }

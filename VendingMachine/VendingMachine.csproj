@@ -48,6 +48,7 @@
     <Compile Include="ContainableItem.cs" />
     <Compile Include="ContainableItemsCollection.cs" />
     <Compile Include="CreditCard.cs" />
+    <Compile Include="CustomException.cs" />
     <Compile Include="Dispenser.cs" />
     <Compile Include="StatisticItemsCollection.cs" />
     <Compile Include="StatisticItem.cs" />

@@ -27,14 +27,6 @@ namespace VendingMachine
             {
                 return 1;
             }
-            if (quantity != product.quantity)
-            {
-                return 1;
-            }
-            if (size != product.size)
-            {
-                return 1;
-            }
             return 0;
         }
     }

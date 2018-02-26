@@ -9,6 +9,10 @@ namespace VendingMachine
     class StatisticItemsCollection
     {
         private List<StatisticItem> list_products;
+        public StatisticItemsCollection()
+        {
+            list_products = new List<StatisticItem>();
+        }
         public void Add(Product product)
         {
             StatisticItem statisticitem = new StatisticItem();

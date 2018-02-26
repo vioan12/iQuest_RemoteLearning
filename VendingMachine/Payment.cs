@@ -8,6 +8,8 @@ namespace VendingMachine
 {
     abstract class Payment
     {
-        public double value { get; protected set; }
+        protected double value { get; set; }
+        public abstract double Pay(double price);
+
     }
 }
