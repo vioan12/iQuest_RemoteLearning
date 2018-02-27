@@ -17,11 +17,11 @@ namespace VendingMachine
         {
             list_observers.Remove(observer);
         }
-        public void Notify()
+        public void Notify(int row, int column)
         {
             foreach (Observer observer in list_observers)
             {
-                observer.Update();
+                observer.Update(row, column);
             }
         }
     }

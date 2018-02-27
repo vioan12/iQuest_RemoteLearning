@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class PaymentTerminal
+    class PaymentTerminal : Subject
     {
         private double price;
         public double amount { private set; get; }

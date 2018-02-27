@@ -8,6 +8,6 @@ namespace VendingMachine
 {
     abstract class Observer
     {
-        public abstract void Update();
+        public abstract void Update(int row, int column);
     }
 }

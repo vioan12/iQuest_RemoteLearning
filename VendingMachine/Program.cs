@@ -8,17 +8,16 @@ namespace VendingMachine
 {
     class Program
     {
-        static private Dispenser dispenser;
+        //static private Dispenser dispenser = new Dispenser();
+        static Dispenser dispenser = new Dispenser();
         static private StatisticItemsCollection statisticitemscollection;
         static private void ReadFile()
         {
             int i_temp1, i_temp2;
             string s_temp, op;
-            dispenser = new Dispenser();
             statisticitemscollection = new StatisticItemsCollection();
             Product P_temp;
             ContainableItem CI_temp;
-
             try
             {
                 using (System.IO.StreamReader file = new System.IO.StreamReader("In.txt")) 
@@ -232,6 +231,7 @@ namespace VendingMachine
                             Payment payment;
                             Position position;
                             PaymentTerminal paymentterminal = new PaymentTerminal();
+                            paymentterminal.Attach(dispenser);
                             position = ConsoleSelectProduct();
                             paymentterminal.SelectProduct(dispenser.collection.GetItem(position.row, position.column).product.price);
                             int op2 = 0;
@@ -343,7 +343,8 @@ namespace VendingMachine
                                 Console.WriteLine("The payment is completed!");
                                 Console.WriteLine("Change:" + paymentterminal.GiveChange() + " $");
                                 statisticitemscollection.IncrementNumberOfSoldProduct(dispenser.collection.GetItem(position.row, position.column).product);
-                                dispenser.DecrementQuantity(position.row, position.column);
+                                //dispenser.DecrementQuantity(position.row, position.column);
+                                paymentterminal.Notify(position.row, position.column);
                             }
                             else
                             {
