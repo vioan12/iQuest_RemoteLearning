@@ -95,14 +95,20 @@ namespace VendingMachine
         }
         static private void ConsoleWriteAllStatisticForProducts()
         {
+            int sum1 = 0;
+            double sum2 = 0;
             for (int i = 0; i < statisticitemscollection.Count(); i++)
             {
                 Console.WriteLine("");
                 Console.WriteLine(statisticitemscollection.GetItem(i).product.name + " | " + statisticitemscollection.GetItem(i).product.category.name + " | " + Convert.ToString(statisticitemscollection.GetItem(i).product.price));
                 Console.WriteLine("Number of sold products:" + statisticitemscollection.GetItem(i).numberofsoldproduct);
                 Console.WriteLine("Earnings:" + ( (statisticitemscollection.GetItem(i).profitpercentage / 100 * statisticitemscollection.GetItem(i).product.price) * statisticitemscollection.GetItem(i).numberofsoldproduct) + " $");
-
+                sum1 = sum1 + statisticitemscollection.GetItem(i).numberofsoldproduct;
+                sum2 = sum2 + ((statisticitemscollection.GetItem(i).profitpercentage / 100 * statisticitemscollection.GetItem(i).product.price) * statisticitemscollection.GetItem(i).numberofsoldproduct);
             }
+            Console.WriteLine("");
+            Console.WriteLine("Global number of sold products:" + sum1);
+            Console.WriteLine("Global earnings:" + sum2 + " $");
             Console.WriteLine("");
         }
         static private Position ConsoleSelectProduct()
