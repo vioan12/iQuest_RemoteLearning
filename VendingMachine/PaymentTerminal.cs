@@ -6,24 +6,14 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class PaymentTerminal
+    class PaymentTerminal : Subject
     {
         private double price;
-        private double amount;
+        public double amount { private set; get; }
         public PaymentTerminal()
-        {
-            Default();
-        }
-        private void Default()
         {
             price = 0;
             amount = 0;
-        }
-        private bool IsDefault()
-        {
-            if ((price == 0) || (amount == 0))
-                return true;
-            return false;
         }
         public void SelectProduct(double price)
         {
@@ -31,9 +21,13 @@ namespace VendingMachine
         }
         public void AddAmount(Payment payment)
         {
-            if(IsDefault() == false)
+            try
             {
-                amount = amount + payment.value;
+                amount = amount + payment.Pay(price);
+            }
+            catch (Exception exception)
+            {
+                throw exception;
             }
         }
         public bool IsComplete()
@@ -49,29 +43,11 @@ namespace VendingMachine
         }
         public double GiveChange()
         {
-            if ((IsComplete() == true) && (IsDefault() == false))
-            {
-                double d_temp = amount - price;
-                Default();
-                return d_temp;
-            }
-            else
-            {
-                return 0;
-            }
+            return amount - price;
         }
         public double Cancel()
         {
-            if(IsDefault() == true)
-            {
-                return 0;
-            }
-            else
-            {
-                double d_temp = amount;
-                Default();
-                return d_temp;
-            }
+            return amount;
         }
     }
 }

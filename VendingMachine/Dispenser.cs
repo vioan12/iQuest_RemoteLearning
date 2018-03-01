@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class Dispenser
+    class Dispenser : Observer
     {
         public ContainableItemsCollection collection { private set; get; }
         public Dispenser()
         {
             collection = new ContainableItemsCollection();
         }
-        public void DecrementQuantity(int row, int column)
+        private void DecrementQuantity(int row, int column)
         {
             for(int i = 0; i < collection.Count(); i++)
             {
@@ -33,6 +33,10 @@ namespace VendingMachine
         public void Add(ContainableItem containableitem)
         {
             collection.Add(containableitem);
+        }
+        public override void Update(int row, int column)
+        {
+            DecrementQuantity(row, column);
         }
     }
 }

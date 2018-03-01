@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    abstract class Payment
+    abstract class Observer
     {
-        protected double value { get; set; }
-        public abstract double Pay(double price);
-
+        public abstract void Update(int row, int column);
     }
 }

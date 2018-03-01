@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    abstract class Payment
+    static class Constants
     {
-        protected double value { get; set; }
-        public abstract double Pay(double price);
-
+        public const double Profit = 10.0;
     }
 }

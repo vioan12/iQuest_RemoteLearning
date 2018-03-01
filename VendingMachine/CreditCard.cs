@@ -27,6 +27,7 @@ namespace VendingMachine
             else
             {
                 valid = false;
+                throw new CustomException("Wrong CVV!");
             }
         }
     }
