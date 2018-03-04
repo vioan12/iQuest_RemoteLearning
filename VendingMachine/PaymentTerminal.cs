@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class PaymentTerminal : Subject
+    public class PaymentTerminal : Subject
     {
         private double price;
         public double amount { private set; get; }

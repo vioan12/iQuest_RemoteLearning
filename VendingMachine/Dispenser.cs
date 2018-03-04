@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace VendingMachine
 {
-    class Dispenser : Observer
+    public class Dispenser : Observer
     {
         public ContainableItemsCollection collection { private set; get; }
         public Dispenser()
@@ -34,7 +29,7 @@ namespace VendingMachine
         {
             collection.Add(containableitem);
         }
-        public override void Update(int row, int column)
+        public override void Update(int row, int column, Product product)
         {
             DecrementQuantity(row, column);
         }

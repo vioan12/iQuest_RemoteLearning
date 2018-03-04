@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace VendingMachine
 {
-    abstract class Subject
+    public class Subject
     {
-        private List<Observer> list_observers = new List<Observer>();
+        private List<Observer> observersList = new List<Observer>();
         public void Attach(Observer observer)
         {
-            list_observers.Add(observer);
+            observersList.Add(observer);
         }
         public void Detach(Observer observer)
         {
-            list_observers.Remove(observer);
+            observersList.Remove(observer);
         }
-        public void Notify(int row, int column)
+        public void Notify(int row, int column, Product product)
         {
-            foreach (Observer observer in list_observers)
+            foreach (Observer observer in observersList)
             {
-                observer.Update(row, column);
+                observer.Update(row, column, product);
             }
         }
     }

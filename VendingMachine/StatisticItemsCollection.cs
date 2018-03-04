@@ -1,49 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class StatisticItemsCollection
+    public class StatisticItemsCollection
     {
-        private List<StatisticItem> list_products;
+        private List<StatisticItem> productsList;
         public StatisticItemsCollection()
         {
-            list_products = new List<StatisticItem>();
+            productsList = new List<StatisticItem>();
         }
         public void Add(Product product)
         {
-            StatisticItem statisticitem = new StatisticItem();
-            statisticitem.product = product;
-            statisticitem.numberofsoldproduct = 0;
-            statisticitem.profitpercentage = Constants.Profit;
-            list_products.Add(statisticitem);
+            StatisticItem statisticItem = new StatisticItem();
+            statisticItem.product = product;
+            statisticItem.numberOfSoldProduct = 0;
+            statisticItem.profitPercentage = Constants.profit;
+            productsList.Add(statisticItem);
         }
         public int Count()
         {
-            return list_products.Count();
+            return productsList.Count();
         }
         public void IncrementNumberOfSoldProduct(Product product)
         {
-            for (int i = 0; i < list_products.Count(); i++)
+            for (int i = 0; i < productsList.Count(); i++)
             {
-                if (list_products.ElementAt(i).product.CompareWith(product) == 0)
+                if (productsList.ElementAt(i).product.CompareWith(product) == 0)
                 {
-                    list_products.ElementAt(i).numberofsoldproduct++;
+                    productsList.ElementAt(i).numberOfSoldProduct++;
                 }
             }
         }
         public StatisticItem GetItem(int index)
         {
-            if (list_products.ElementAt(index) != null)
+            if (productsList.ElementAt(index) != null)
             {
-                return list_products.ElementAt(index);
+                return productsList.ElementAt(index);
             }
             else
             {
-                return null;
+                throw new Exception("Item does not exist!");
             }
         }
     }

@@ -1,62 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class ContainableItemsCollection
+    public class ContainableItemsCollection
     {
-        private List<ContainableItem> products_list;
+        private List<ContainableItem> productsList;
         public ContainableItemsCollection()
         {
-            products_list = new List<ContainableItem>();
+            productsList = new List<ContainableItem>();
         }
         public void Add(ContainableItem CI)
         {
             bool sw = true;
-            for (int i = 0; (i < products_list.Count) && (sw == true); i++)
-                if (products_list.ElementAt(i).position.CompareWith(new Position(CI.position.row, CI.position.column)) == 0)
+            for (int i = 0; (i < productsList.Count) && (sw == true); i++)
+                if (productsList.ElementAt(i).position.CompareWith(new Position(CI.position.row, CI.position.column)) == 0)
                 {
                     sw = false;
                 }
             if (sw == true)
             {
-                products_list.Add(CI);
+                productsList.Add(CI);
             }
         }
         public void Remove(int row, int column)
         {
-            for (int i = 0; i < products_list.Count; i++)
-                if (products_list.ElementAt(i).position.CompareWith(new Position(row,column)) == 0) 
+            for (int i = 0; i < productsList.Count; i++)
+                if (productsList.ElementAt(i).position.CompareWith(new Position(row,column)) == 0) 
                 {
-                    products_list.Remove(products_list.ElementAt(i));
+                    productsList.Remove(productsList.ElementAt(i));
                 }
         }
         public int Count()
         {
-            return products_list.Count;
+            return productsList.Count;
         }
         public ContainableItem GetItem(int index)
         {
-            if (products_list.ElementAt(index) != null)
+            if (productsList.ElementAt(index) != null)
             {
-                return products_list.ElementAt(index);
+                return productsList.ElementAt(index);
             }
             else
             {
-                return null;
+                throw new Exception("Item does not exist!");
             }
         }
         public ContainableItem GetItem(int row, int column)
         {
-            for (int i = 0; i < products_list.Count; i++)
-                if (products_list.ElementAt(i).position.CompareWith(new Position(row, column)) == 0)
+            for (int i = 0; i < productsList.Count; i++)
+                if (productsList.ElementAt(i).position.CompareWith(new Position(row, column)) == 0)
                 {
-                    return products_list.ElementAt(i);
+                    return productsList.ElementAt(i);
                 }
-            return null;
+            throw new Exception("Item does not exist!");
         }
     }
 }
