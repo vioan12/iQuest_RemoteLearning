@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace VendingMachine
 {
-    class Position
+    public class Position
     {
         public int row { get; private set;}
         public int column { get; private set;}

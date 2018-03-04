@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class CreditCard : PaymentStock
+    public class CreditCard : PaymentStock
     {
-        private string validdate, cvv;
-        public CreditCard(string number, string validdate, string name, double amount, string cvv)
+        private string validDate, cvv;
+        public CreditCard(string number, string validDate, string name, double amount, string cvv)
         {
             base.number = number;
-            this.validdate = validdate;
+            this.validDate = validDate;
             base.name = name;
             base.amount = amount;
             this.cvv = cvv;
             valid = false;
         }
-        public override void Validation(string value)
+        public override void IsValid(string value)
         {
             if(cvv == value)
             {
@@ -27,7 +23,7 @@ namespace VendingMachine
             else
             {
                 valid = false;
-                throw new CustomException("Wrong CVV!");
+                throw new Exception("Wrong CVV!");
             }
         }
     }

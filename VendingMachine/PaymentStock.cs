@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    abstract class PaymentStock : Payment
+    public abstract class PaymentStock : Payment
     {
         protected string number, name;
         protected double amount;
         public bool valid { protected set; get; }
-        public abstract void Validation(string value);
+        public abstract void IsValid(string value);
         public override double Pay(double price)
         {
             base.value = price;
@@ -22,7 +18,7 @@ namespace VendingMachine
             }
             else
             {
-                throw new CustomException("Insufficient funds!!!");
+                throw new Exception("Insufficient funds!!!");
             }
         }
     }
