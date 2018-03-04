@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace VendingMachine
 {
-    public class ContainableItemsCollection
+    public class ContainableItemsCollection : Observer
     {
         private List<ContainableItem> productsList;
         public ContainableItemsCollection()
@@ -55,6 +55,30 @@ namespace VendingMachine
                     return productsList.ElementAt(i);
                 }
             throw new Exception("Item does not exist!");
+        }
+        private void DecrementQuantity(int row, int column)
+        {
+            for (int i = 0; i < Count(); i++)
+            {
+                if (GetItem(i).position.CompareWith(new Position(row, column)) == 0)
+                {
+                    if (GetItem(i).product.quantity > 1)
+                    {
+                        GetItem(i).product.quantity -= 1;
+                    }
+                    else
+                    {
+                        Remove(row, column);
+                    }
+                }
+            }
+        }
+        public void Update(int row, int column)
+        {
+            DecrementQuantity(row, column);
+        }
+        public void Update(Product product)
+        {
         }
     }
 }

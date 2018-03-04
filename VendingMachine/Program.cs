@@ -40,7 +40,7 @@ namespace VendingMachine
                             try
                             {
                                 position = menu.ConsoleSelectProduct();
-                                paymentTerminal.SelectProduct(menu.dispenser.collection.GetItem(position.row, position.column).product.price);
+                                paymentTerminal.SelectProduct(menu.containableItemsCollection.GetItem(position.row, position.column).product.price);
                                 int op2 = 0;
                                 bool sw = true;
                                 do
@@ -149,7 +149,7 @@ namespace VendingMachine
                                 {
                                     Console.WriteLine("The payment is completed!");
                                     Console.WriteLine("Change:" + paymentTerminal.GiveChange() + " $");
-                                    menu.statisticItemsCollection.IncrementNumberOfSoldProduct(menu.dispenser.collection.GetItem(position.row, position.column).product);
+                                    menu.statisticItemsCollection.IncrementNumberOfSoldProduct(menu.containableItemsCollection.GetItem(position.row, position.column).product);
                                     //dispenser.DecrementQuantity(position.row, position.column);
                                     paymentTerminal.Notify(position.row, position.column, null);
                                 }

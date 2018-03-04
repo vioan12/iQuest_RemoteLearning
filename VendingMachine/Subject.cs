@@ -2,7 +2,7 @@
 
 namespace VendingMachine
 {
-    public class Subject
+    public abstract class Subject : InterfaceSubject
     {
         private List<Observer> observersList = new List<Observer>();
         public void Attach(Observer observer)
@@ -17,7 +17,8 @@ namespace VendingMachine
         {
             foreach (Observer observer in observersList)
             {
-                observer.Update(row, column, product);
+                observer.Update(row, column);
+                observer.Update(product);
             }
         }
     }

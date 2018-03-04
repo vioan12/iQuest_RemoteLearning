@@ -1,8 +1,9 @@
 ﻿
 namespace VendingMachine
 {
-    public abstract class Observer
+    public interface Observer
     {
-        public abstract void Update(int row, int column, Product product);
+        void Update(int row, int column);
+        void Update(Product product);
     }
 }
