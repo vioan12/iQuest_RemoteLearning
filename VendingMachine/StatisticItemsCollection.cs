@@ -13,11 +13,15 @@ namespace VendingMachine
         }
         public void Add(Product product)
         {
-            StatisticItem statisticItem = new StatisticItem();
-            statisticItem.product = product;
-            statisticItem.numberOfSoldProduct = 0;
-            statisticItem.profitPercentage = Constants.profit;
-            productsList.Add(statisticItem);
+            //[AD] spre deosebire de containable items, nu faci nici o verificare si poti adauga acelasi produs de nenumarate ori
+            if (!productsList.Any(item => item.product.name == product.name))
+            {
+                StatisticItem statisticItem = new StatisticItem();
+                statisticItem.product = product;
+                statisticItem.numberOfSoldProduct = 0;
+                statisticItem.profitPercentage = Constants.profit;
+                productsList.Add(statisticItem);
+            }
         }
         public int Count()
         {
@@ -45,12 +49,18 @@ namespace VendingMachine
             }
         }
 
-        public void Update(int row, int column)
-        {
-        }
+        //[AD] ??? doua metode care nu au nici o implementare, makes no sense.
+        //public void Update(int row, int column)
+        //{
+        //}
 
-        public void Update(Product product)
+        //public void Update(Product product)
+        //{
+        //}
+
+        public void Update(ContainableItem item)
         {
+            IncrementNumberOfSoldProduct(item.product);
         }
     }
 }
