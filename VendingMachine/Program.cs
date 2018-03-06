@@ -151,11 +151,6 @@ namespace VendingMachine
                                 {
                                     Console.WriteLine("The payment is completed!");
                                     Console.WriteLine("Change:" + paymentTerminal.GiveChange() + " $");
-                                    //[AD] nu ar trebui sa apelezi aici statistics daca e observer
-                                    // in momentul in care se face livrarea produsului, e notificat si stie el ce sa faca.
-                                    // daca faci asa, nu are nici un sens sa fie observer ca nu mai are ce sa faca
-                                    //menu.statisticItemsCollection.IncrementNumberOfSoldProduct(menu.containableItemsCollection.GetItem(position.row, position.column).product);
-                                    //dispenser.DecrementQuantity(position.row, position.column);
                                     paymentTerminal.Notify(containableItem);
                                 }
                                 else

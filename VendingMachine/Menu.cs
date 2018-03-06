@@ -20,7 +20,7 @@ namespace VendingMachine
             int temp1, temp2;
             string temp3, op;
             Product product;
-            ContainableItem CI_temp;
+            ContainableItem item;
             try
             {
                 using (System.IO.StreamReader file = new System.IO.StreamReader("In.txt"))
@@ -33,7 +33,7 @@ namespace VendingMachine
                             case "add":
                                 {
                                     product = new Product();
-                                    CI_temp = new ContainableItem();
+                                    item = new ContainableItem();
                                     temp3 = file.ReadLine();
                                     product.name = temp3;
 
@@ -56,11 +56,13 @@ namespace VendingMachine
                                     temp3 = file.ReadLine();
                                     temp2 = Convert.ToInt32(temp3);
 
-                                    CI_temp.product = product;
-                                    CI_temp.position = new Position(temp1, temp2);
+                                    item.product = product;
+                                    item.position = new Position(temp1, temp2);
 
-                                    containableItemsCollection.Add(CI_temp);
-                                    statisticItemsCollection.Add(CI_temp.product);
+                                    if(containableItemsCollection.Add(item) == true)
+                                    {
+                                        statisticItemsCollection.Add(item.product);
+                                    }
                                     break;
                                 }
                         }

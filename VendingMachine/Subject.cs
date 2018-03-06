@@ -2,35 +2,23 @@
 
 namespace VendingMachine
 {
-    public abstract class Subject : InterfaceSubject
+    public abstract class Subject : ISubject
     {
-        private List<Observer> observersList = new List<Observer>();
-        public void Attach(Observer observer)
+        private List<IObserver> observersList = new List<IObserver>();
+        public void Attach(IObserver observer)
         {
             observersList.Add(observer);
         }
-        public void Detach(Observer observer)
+        public void Detach(IObserver observer)
         {
             observersList.Remove(observer);
         }
-
-        //[AD] Nu ar trebui sa ai 2 metode de update pe care le apelezi, beats the purpose
         public void Notify(ContainableItem item)
         {
-            foreach (Observer observer in observersList)
+            foreach (IObserver observer in observersList)
             {
                 observer.Update(item);
             }
         }
-
-        //[AD] Nu ar trebui sa ai 2 metode de update pe care le apelezi, beats the purpose
-        //public void Notify(int row, int column, Product product)
-        //{
-        //    foreach (Observer observer in observersList)
-        //    {
-        //        observer.Update(row, column);
-        //        observer.Update(product);
-        //    }
-        //}
     }
 }

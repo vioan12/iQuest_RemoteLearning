@@ -1,15 +1,13 @@
 ﻿
+using System;
+
 namespace VendingMachine
 {
-    public class Dispenser : Subject, Observer
+    public class Dispenser : Subject, IObserver
     {
-        public void Update(int row, int column)
+        public void Update(ContainableItem item)
         {
-            Notify(row, column, null);
-        }
-        public void Update(Product product)
-        {
-            Notify(0, 0, product);
+            Notify(item);
         }
     }
 }

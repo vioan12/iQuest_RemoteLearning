@@ -49,9 +49,9 @@
     <Compile Include="ContainableItemsCollection.cs" />
     <Compile Include="CreditCard.cs" />
     <Compile Include="Dispenser.cs" />
-    <Compile Include="InterfaceSubject.cs" />
+    <Compile Include="ISubject.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="Observer.cs" />
+    <Compile Include="IObserver.cs" />
     <Compile Include="StatisticItemsCollection.cs" />
     <Compile Include="StatisticItem.cs" />
     <Compile Include="PaymentCash.cs" />
