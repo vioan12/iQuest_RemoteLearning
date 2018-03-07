@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace VendingMachine
 {
-    public class StatisticItemsCollection
+    public class StatisticItemsCollection : IObserver
     {
         private List<StatisticItem> productsList;
         public StatisticItemsCollection()
@@ -43,6 +43,11 @@ namespace VendingMachine
             {
                 throw new Exception("Item does not exist!");
             }
+        }
+
+        public void Update(ContainableItem item)
+        {
+            IncrementNumberOfSoldProduct(item.product);
         }
     }
 }

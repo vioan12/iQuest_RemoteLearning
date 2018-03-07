@@ -2,22 +2,22 @@
 
 namespace VendingMachine
 {
-    public class Subject
+    public abstract class Subject : ISubject
     {
-        private List<Observer> observersList = new List<Observer>();
-        public void Attach(Observer observer)
+        private List<IObserver> observersList = new List<IObserver>();
+        public void Attach(IObserver observer)
         {
             observersList.Add(observer);
         }
-        public void Detach(Observer observer)
+        public void Detach(IObserver observer)
         {
             observersList.Remove(observer);
         }
-        public void Notify(int row, int column, Product product)
+        public void Notify(ContainableItem item)
         {
-            foreach (Observer observer in observersList)
+            foreach (IObserver observer in observersList)
             {
-                observer.Update(row, column, product);
+                observer.Update(item);
             }
         }
     }

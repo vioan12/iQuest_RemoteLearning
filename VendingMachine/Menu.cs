@@ -6,17 +6,21 @@ namespace VendingMachine
     {
         public Dispenser dispenser { set; get; }
         public StatisticItemsCollection statisticItemsCollection { set; get; }
+        public ContainableItemsCollection containableItemsCollection { set; get; }
         public Menu()
         {
             dispenser = new Dispenser();
             statisticItemsCollection = new StatisticItemsCollection();
+            containableItemsCollection = new ContainableItemsCollection();
+            dispenser.Attach(containableItemsCollection);
+            dispenser.Attach(statisticItemsCollection);
         }
         public void ReadFile()
         {
             int temp1, temp2;
             string temp3, op;
             Product product;
-            ContainableItem CI_temp;
+            ContainableItem item;
             try
             {
                 using (System.IO.StreamReader file = new System.IO.StreamReader("In.txt"))
@@ -29,7 +33,7 @@ namespace VendingMachine
                             case "add":
                                 {
                                     product = new Product();
-                                    CI_temp = new ContainableItem();
+                                    item = new ContainableItem();
                                     temp3 = file.ReadLine();
                                     product.name = temp3;
 
@@ -52,11 +56,13 @@ namespace VendingMachine
                                     temp3 = file.ReadLine();
                                     temp2 = Convert.ToInt32(temp3);
 
-                                    CI_temp.product = product;
-                                    CI_temp.position = new Position(temp1, temp2);
+                                    item.product = product;
+                                    item.position = new Position(temp1, temp2);
 
-                                    dispenser.Add(CI_temp);
-                                    statisticItemsCollection.Add(CI_temp.product);
+                                    if(containableItemsCollection.Add(item) == true)
+                                    {
+                                        statisticItemsCollection.Add(item.product);
+                                    }
                                     break;
                                 }
                         }
@@ -85,11 +91,11 @@ namespace VendingMachine
         }
         public void ConsoleWriteAllProducts()
         {
-            for (int i = 0; i < dispenser.collection.Count(); i++)
+            for (int i = 0; i < containableItemsCollection.Count(); i++)
             {
-                Console.WriteLine("[" + dispenser.collection.GetItem(i).position.row + " " + dispenser.collection.GetItem(i).position.column + "] ---> " + dispenser.collection.GetItem(i).product.name + "  (" + dispenser.collection.GetItem(i).product.category.name + ")");
-                Console.WriteLine("             Price:" + Convert.ToString(dispenser.collection.GetItem(i).product.price) + " $");
-                Console.WriteLine("             Quantity:" + Convert.ToString(dispenser.collection.GetItem(i).product.quantity));
+                Console.WriteLine("[" + containableItemsCollection.GetItem(i).position.row + " " + containableItemsCollection.GetItem(i).position.column + "] ---> " + containableItemsCollection.GetItem(i).product.name + "  (" + containableItemsCollection.GetItem(i).product.category.name + ")");
+                Console.WriteLine("             Price:" + Convert.ToString(containableItemsCollection.GetItem(i).product.price) + " $");
+                Console.WriteLine("             Quantity:" + Convert.ToString(containableItemsCollection.GetItem(i).product.quantity));
         }
         Console.WriteLine("");
         }

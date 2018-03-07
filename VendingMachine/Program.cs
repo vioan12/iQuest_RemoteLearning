@@ -40,7 +40,9 @@ namespace VendingMachine
                             try
                             {
                                 position = menu.ConsoleSelectProduct();
-                                paymentTerminal.SelectProduct(menu.dispenser.collection.GetItem(position.row, position.column).product.price);
+                                //[AD] ar trebui sa iei produsul din lista, sa il folosesti mai departe
+                                ContainableItem containableItem = menu.containableItemsCollection.GetItem(position.row, position.column);
+                                paymentTerminal.SelectProduct(containableItem.product.price);
                                 int op2 = 0;
                                 bool sw = true;
                                 do
@@ -149,9 +151,7 @@ namespace VendingMachine
                                 {
                                     Console.WriteLine("The payment is completed!");
                                     Console.WriteLine("Change:" + paymentTerminal.GiveChange() + " $");
-                                    menu.statisticItemsCollection.IncrementNumberOfSoldProduct(menu.dispenser.collection.GetItem(position.row, position.column).product);
-                                    //dispenser.DecrementQuantity(position.row, position.column);
-                                    paymentTerminal.Notify(position.row, position.column, null);
+                                    paymentTerminal.Notify(containableItem);
                                 }
                                 else
                                 {
