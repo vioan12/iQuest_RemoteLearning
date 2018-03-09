@@ -1,4 +1,4 @@
-##Development of a vending machine
+#Development of a vending machine
 
 The vending machine will offer Products. The products will have the following attributes:
   * Type of products
